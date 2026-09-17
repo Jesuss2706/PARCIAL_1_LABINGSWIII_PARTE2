@@ -1,0 +1,13 @@
+/* ---- Sección 1: Carrusel ---- */
+.carousel-contenedor {
+    max-width: 900px;
+}
+
+.carousel-img {
+    height: 380px;
+    object-fit: cover;
+}
+
+h5 {
+    margin-bottom: 0.5rem;
+}
