@@ -1,0 +1,383 @@
+/* ========================================
+   SECCIÓN REGISTRO
+======================================== */
+
+.registro-section {
+  padding: 75px 0;
+  background-color: #f6f9fc;
+}
+
+
+/* ========================================
+   ENCABEZADO
+======================================== */
+
+.registro-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 40px;
+}
+
+.registro-header span {
+  display: block;
+  margin-bottom: 8px;
+  color: #168fa1;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.registro-header h2 {
+  margin: 0;
+  color: #173f61;
+  font-size: 2.1rem;
+  font-weight: 700;
+}
+
+.registro-header p {
+  margin: 12px auto 0;
+  color: #718494;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.registro-header p strong {
+  color: #173f61;
+}
+
+
+/* ========================================
+   TARJETA
+======================================== */
+
+.registro-card {
+  overflow: hidden;
+  background-color: white;
+  border: 1px solid #e1eaf1;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(23, 63, 97, 0.08);
+}
+
+
+/* ========================================
+   CABECERA TARJETA
+======================================== */
+
+.registro-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 22px 28px;
+  color: white;
+  background-color: #173f61;
+}
+
+.registro-icon {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #72d2da;
+  background-color: rgba(255, 255, 255, 0.12);
+  border-radius: 11px;
+  font-size: 1rem;
+}
+
+.registro-card-header h5 {
+  margin: 0 0 3px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.registro-card-header span {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.75rem;
+}
+
+
+/* ========================================
+   FORMULARIO
+======================================== */
+
+.registro-form {
+  padding: 28px;
+}
+
+.registro-form .form-label {
+  display: block;
+  margin-bottom: 7px;
+  color: #173f61;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+
+/* ========================================
+   INPUTS
+======================================== */
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper > i {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  z-index: 2;
+  color: #168fa1;
+  font-size: 0.8rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.input-wrapper .form-control {
+  height: 45px;
+  padding-left: 40px;
+  color: #173f61;
+  background-color: #f8fbfd;
+  border: 1px solid #dce7ee;
+  border-radius: 9px;
+  font-size: 0.82rem;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.input-wrapper .form-control::placeholder {
+  color: #a2b1bc;
+}
+
+.input-wrapper .form-control:focus {
+  background-color: white;
+  border-color: #168fa1;
+  box-shadow: 0 0 0 3px rgba(22, 143, 161, 0.10);
+}
+
+.input-wrapper .form-control:focus + i {
+  color: #173f61;
+}
+
+
+/* ========================================
+   MENSAJES DE ERROR
+======================================== */
+
+.registro-form .form-text {
+  margin-top: 5px;
+  font-size: 0.7rem;
+}
+
+
+/* ========================================
+   DOCUMENTOS
+======================================== */
+
+.document-options {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.document-option {
+  flex: 1;
+  min-width: 220px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  color: #536b7d;
+  background-color: #f8fbfd;
+  border: 1px solid #dce7ee;
+  border-radius: 9px;
+  cursor: pointer;
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.document-option:hover {
+  background-color: #eef8fa;
+  border-color: #8bcbd1;
+}
+
+.document-option .form-check-input {
+  margin: 0;
+  cursor: pointer;
+}
+
+.document-option .form-check-input:checked {
+  background-color: #168fa1;
+  border-color: #168fa1;
+}
+
+.document-icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #168fa1;
+  background-color: #e6f4f6;
+  border-radius: 7px;
+  font-size: 0.75rem;
+}
+
+.document-option span:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.document-option strong {
+  color: #173f61;
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.document-option small {
+  color: #8496a4;
+  font-size: 0.65rem;
+}
+
+
+/* ========================================
+   TÉRMINOS
+======================================== */
+
+.terms-box {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 15px;
+  background-color: #f5f9fc;
+  border: 1px solid #e4edf2;
+  border-radius: 9px;
+}
+
+.terms-box .form-check-input {
+  margin: 0;
+  cursor: pointer;
+}
+
+.terms-box .form-check-input:checked {
+  background-color: #168fa1;
+  border-color: #168fa1;
+}
+
+.terms-box .form-check-label {
+  color: #536b7d;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+
+/* ========================================
+   BOTÓN REGISTRAR
+======================================== */
+
+.btn-registrar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 12px 18px;
+  margin-top: 5px;
+  color: white;
+  background-color: #173f61;
+  border: none;
+  border-radius: 9px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.btn-registrar > i:first-child {
+  color: #72d2da;
+}
+
+.btn-registrar:hover {
+  background-color: #168fa1;
+  box-shadow: 0 7px 18px rgba(22, 143, 161, 0.22);
+  transform: translateY(-2px);
+}
+
+.btn-registrar:hover > i:first-child {
+  color: white;
+}
+
+.btn-arrow {
+  margin-left: auto;
+  font-size: 0.7rem;
+  transition: transform 0.25s ease;
+}
+
+.btn-registrar:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 767px) {
+
+  .registro-section {
+    padding: 55px 0;
+  }
+
+  .registro-header h2 {
+    font-size: 1.75rem;
+  }
+
+  .registro-header p {
+    font-size: 0.88rem;
+  }
+
+  .registro-form {
+    padding: 22px;
+  }
+
+  .registro-card-header {
+    padding: 20px 22px;
+  }
+
+  .document-option {
+    min-width: 100%;
+  }
+
+}
+
+@media (max-width: 575px) {
+
+  .registro-section {
+    padding: 45px 0;
+  }
+
+  .registro-header {
+    margin-bottom: 30px;
+  }
+
+  .registro-form {
+    padding: 18px;
+  }
+
+  .registro-card-header {
+    padding: 18px;
+  }
+
+  .registro-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+}

@@ -14,11 +14,19 @@ export class Registro {
 
   protected readonly formulario = this.fb.nonNullable.group({
     nombres: ['', [Validators.required]],
+
     apellidos: ['', [Validators.required]],
+
     correo: ['', [Validators.required, Validators.email]],
+
     telefono: ['', [Validators.required, Validators.pattern(/^\d+$/)]],
+
     password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(30)]],
+
     tipoDocumento: ['', [Validators.required]],
+
+    numeroDocumento: ['', [Validators.required, Validators.pattern(/^\d+$/)]],
+
     terminos: [false, [Validators.requiredTrue]],
   });
 
@@ -32,11 +40,18 @@ export class Registro {
       return;
     }
 
-    const { nombres, correo } = this.formulario.getRawValue();
+    const { nombres, correo, tipoDocumento, numeroDocumento } = this.formulario.getRawValue();
 
-    this.notificacionService.mostrar(`¡Registro exitoso! Enviamos un código de confirmación a ${correo}`);
-    this.notificacionService.mostrar(`✅ ¡Bienvenido/a, ${nombres}! Revisa tu correo para confirmar tu registro.`);
+    this.notificacionService.mostrar(
+      `¡Registro exitoso! Enviamos un código de confirmación a ${correo}`,
+    );
 
-    this.formulario.reset({ terminos: false });
+    this.notificacionService.mostrar(
+      `¡Bienvenido/a, ${nombres}! Revisa tu correo para confirmar tu registro.`,
+    );
+
+    this.formulario.reset({
+      terminos: false,
+    });
   }
 }

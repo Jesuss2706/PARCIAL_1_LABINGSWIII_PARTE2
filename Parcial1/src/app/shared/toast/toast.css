@@ -1,19 +1,122 @@
 #notificaciones {
   position: fixed;
-  top: 15px;
-  right: 15px;
-  z-index: 2000;
+  top: 25px;
+  right: 25px;
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  width: min(380px, calc(100vw - 40px));
 }
 
 .notificacion {
-  background-color: #2f8f4e;
-  color: white;
-  padding: 10px 16px;
-  border-radius: 8px;
-  margin-bottom: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  min-height: 62px;
+  padding: 15px 18px;
+
+  color: #173f61;
+  background-color: #ffffff;
+
+  border: 1px solid #e4edf4;
+  border-left: 5px solid #168fa1;
+  border-radius: 12px;
+
+  box-shadow:
+    0 8px 25px rgba(23, 63, 97, 0.12),
+    0 2px 6px rgba(23, 63, 97, 0.06);
+
+  font-size: 0.88rem;
+  font-weight: 500;
+  line-height: 1.4;
+
+  animation: toastEntrada 0.35s ease-out;
 }
 
+/* Línea decorativa superior */
+.notificacion::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 5px;
+  right: 0;
+
+  height: 2px;
+
+  background-color: #72d2da;
+  border-radius: 0 12px 0 0;
+}
+
+/* Icono */
+.notificacion::after {
+  content: "✓";
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 32px;
+  height: 32px;
+
+  color: white;
+  background-color: #168fa1;
+
+  border-radius: 50%;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+/* Notificación de error */
 .notificacion-error {
+  color: #173f61;
+  background-color: #ffffff;
+
+  border-left-color: #c0392b;
+}
+
+.notificacion-error::before {
+  background-color: #e57368;
+}
+
+.notificacion-error::after {
+  content: "!";
   background-color: #c0392b;
+}
+
+/* Animación de entrada */
+@keyframes toastEntrada {
+  from {
+    opacity: 0;
+    transform: translateX(40px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 575px) {
+  #notificaciones {
+    top: 15px;
+    right: 15px;
+    left: 15px;
+
+    width: auto;
+  }
+
+  .notificacion {
+    font-size: 0.82rem;
+  }
 }

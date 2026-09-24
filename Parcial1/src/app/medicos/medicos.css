@@ -1,26 +1,577 @@
-.sidebar-especialidades {
-  background-color: #f4f7fb;
+/* ========================================
+   SECCIÓN MÉDICOS
+======================================== */
+
+.medicos-section {
+  padding: 70px 0;
+
+  background-color: #ffffff;
 }
 
-.especialidad-link {
+
+/* ========================================
+   TÍTULO
+======================================== */
+
+.medicos-section .section-title {
+  text-align: center;
+
+  margin-bottom: 45px;
+}
+
+.medicos-section .section-title span {
   display: block;
-  padding: 6px 0;
-  color: #47709b;
+
+  margin-bottom: 8px;
+
+  color: #168fa1;
+
+  font-size: 0.75rem;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.medicos-section .section-title h2 {
+  margin: 0;
+
+  color: #173f61;
+
+  font-size: 2.1rem;
+
+  font-weight: 700;
+}
+
+.medicos-section .section-title p {
+  max-width: 600px;
+
+  margin: 10px auto 0;
+
+  color: #718494;
+
+  font-size: 0.95rem;
+
+  line-height: 1.6;
+}
+
+
+/* ========================================
+   SIDEBAR
+======================================== */
+
+.sidebar-especialidades {
+  position: sticky;
+
+  top: 90px;
+
+  overflow: hidden;
+
+  background-color: #f5f9fc;
+
+  border: 1px solid #e2ebf2;
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 8px 25px rgba(23, 63, 97, 0.07);
+}
+
+
+/* ========================================
+   CABECERA SIDEBAR
+======================================== */
+
+.sidebar-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 20px;
+
+  background-color: #173f61;
+
+  color: white;
+}
+
+.sidebar-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(255, 255, 255, 0.13);
+
+  border-radius: 10px;
+
+  color: #72d2da;
+
+  font-size: 1rem;
+}
+
+.sidebar-header h5 {
+  margin: 0;
+
+  font-size: 1rem;
+
+  font-weight: 600;
+}
+
+.sidebar-header small {
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 0.72rem;
+}
+
+
+/* ========================================
+   LISTA
+======================================== */
+
+.especialidades-list {
+  list-style: none;
+
+  padding: 10px;
+
+  margin: 0;
+}
+
+.especialidades-list li {
+  margin-bottom: 3px;
+}
+
+
+/* ========================================
+   LINK ESPECIALIDAD
+======================================== */
+
+.especialidad-link {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  width: 100%;
+
+  padding: 11px 10px;
+
+  color: #536b7d;
+
   text-decoration: none;
-  border-bottom: 1px solid #dee2e6;
-  cursor: pointer;
+
+  border-radius: 9px;
+
+  font-size: 0.87rem;
+
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease;
 }
 
 .especialidad-link:hover {
-  color: #6da1d9;
+  color: #173f61;
+
+  background-color: #e8f4f6;
+
+  transform: translateX(3px);
 }
+
+
+/* Icono */
+
+.especialidad-icon {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  color: #168fa1;
+
+  background-color: #e7f4f6;
+
+  border-radius: 7px;
+
+  font-size: 0.75rem;
+}
+
+
+/* Nombre */
+
+.especialidad-nombre {
+  flex-grow: 1;
+}
+
+
+/* Flecha */
+
+.especialidad-arrow {
+  color: #a5b7c4;
+
+  font-size: 0.65rem;
+
+  transition: transform 0.25s ease;
+}
+
+.especialidad-link:hover .especialidad-arrow {
+  color: #168fa1;
+
+  transform: translateX(3px);
+}
+
+
+/* ========================================
+   ESPECIALIDAD ACTIVA
+======================================== */
 
 .especialidad-link.active {
-  font-weight: bold;
-  color: #24466b;
+  color: white;
+
+  background-color: #168fa1;
+
+  box-shadow:
+    0 4px 10px rgba(22, 143, 161, 0.2);
 }
 
-.card-img-top {
-  height: 160px;
+.especialidad-link.active .especialidad-icon {
+  color: #168fa1;
+
+  background-color: white;
+}
+
+.especialidad-link.active .especialidad-arrow {
+  color: white;
+}
+
+
+/* ========================================
+   INFORMACIÓN DE ESPECIALIDAD
+======================================== */
+
+.especialidad-info {
+  margin: 5px 15px 15px;
+
+  padding: 15px;
+
+  background-color: white;
+
+  border: 1px solid #e4edf2;
+
+  border-radius: 10px;
+}
+
+.info-label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #168fa1;
+
+  font-size: 0.62rem;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+.especialidad-info h6 {
+  margin: 0 0 6px;
+
+  color: #173f61;
+
+  font-size: 0.9rem;
+
+  font-weight: 600;
+}
+
+.especialidad-info p {
+  margin: 0;
+
+  color: #748796;
+
+  font-size: 0.75rem;
+
+  line-height: 1.5;
+}
+
+
+/* ========================================
+   TARJETA MÉDICO
+======================================== */
+
+.medico-card {
+  height: 100%;
+
+  overflow: hidden;
+
+  background-color: white;
+
+  border: 1px solid #e2ebf2;
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 5px 18px rgba(23, 63, 97, 0.07);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.medico-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 14px 30px rgba(23, 63, 97, 0.14);
+}
+
+
+/* ========================================
+   IMAGEN MÉDICO
+======================================== */
+
+.medico-image {
+  position: relative;
+
+  height: 210px;
+
+  overflow: hidden;
+
+  background-color: #eaf2f7;
+}
+
+.medico-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
   object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.medico-card:hover .medico-image img {
+  transform: scale(1.05);
+}
+
+
+/* ========================================
+   ESTADO
+======================================== */
+
+.medico-status {
+  position: absolute;
+
+  top: 12px;
+  right: 12px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 5px 9px;
+
+  color: #246b4d;
+
+  background-color: rgba(255, 255, 255, 0.93);
+
+  border-radius: 20px;
+
+  font-size: 0.65rem;
+
+  font-weight: 600;
+
+  box-shadow:
+    0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.medico-status span {
+  width: 7px;
+  height: 7px;
+
+  background-color: #35b77b;
+
+  border-radius: 50%;
+}
+
+
+/* ========================================
+   CUERPO MÉDICO
+======================================== */
+
+.medico-body {
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 18px;
+}
+
+
+/* Especialidad */
+
+.medico-especialidad {
+  margin-bottom: 5px;
+
+  color: #168fa1;
+
+  font-size: 0.7rem;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.7px;
+}
+
+
+/* Nombre */
+
+.medico-body h5 {
+  margin: 0 0 9px;
+
+  color: #173f61;
+
+  font-size: 1.05rem;
+
+  font-weight: 700;
+}
+
+
+/* Frase */
+
+.medico-frase {
+  min-height: 45px;
+
+  margin: 0 0 15px;
+
+  color: #718494;
+
+  font-size: 0.78rem;
+
+  line-height: 1.5;
+}
+
+
+/* ========================================
+   BOTÓN AGENDAR
+======================================== */
+
+.btn-agendar {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 10px 13px;
+
+  color: white;
+
+  background-color: #173f61;
+
+  border: none;
+
+  border-radius: 8px;
+
+  font-size: 0.8rem;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.btn-agendar:hover {
+  background-color: #168fa1;
+
+  transform: translateY(-2px);
+}
+
+.btn-agendar > i:first-child {
+  color: #72d2da;
+}
+
+.btn-agendar:hover > i:first-child {
+  color: white;
+}
+
+.arrow-button {
+  margin-left: auto;
+
+  font-size: 0.7rem;
+
+  transition: transform 0.25s ease;
+}
+
+.btn-agendar:hover .arrow-button {
+  transform: translateX(4px);
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 991px) {
+
+  .sidebar-especialidades {
+    position: static;
+  }
+
+  .medico-image {
+    height: 190px;
+  }
+
+}
+
+
+@media (max-width: 767px) {
+
+  .medicos-section {
+    padding: 50px 0;
+  }
+
+  .medicos-section .section-title h2 {
+    font-size: 1.7rem;
+  }
+
+  .sidebar-especialidades {
+    margin-bottom: 10px;
+  }
+
+}
+
+
+@media (max-width: 575px) {
+
+  .medico-image {
+    height: 220px;
+  }
+
+  .medico-body {
+    padding: 16px;
+  }
+
 }

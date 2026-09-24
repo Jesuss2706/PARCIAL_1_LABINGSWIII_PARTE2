@@ -1,87 +1,260 @@
-<section id="seccion3" class="container my-5">
-  <div class="row justify-content-center">
-    <div class="col-12 col-md-8 col-lg-6">
-      <h2 class="text-center mb-2">Regístrate</h2>
-      <p class="text-center lead mb-4">
-        Crea tu cuenta para agendar citas. Te enviaremos un código de confirmación a tu
-        <strong>correo electrónico</strong>, que será el dato usado para confirmar tu registro.
+<section id="seccion3" class="registro-section">
+  <div class="container">
+    <div class="registro-header">
+      <span>ÚNETE A PIEDRA AZUL</span>
+
+      <h2>Regístrate</h2>
+
+      <p>
+        Crea tu cuenta para agendar tus citas médicas de forma rápida y segura. Te enviaremos un
+        código de confirmación a tu
+        <strong>correo electrónico</strong>.
       </p>
+    </div>
 
-      <form [formGroup]="formulario" (ngSubmit)="registrar()" novalidate>
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-9 col-xl-8">
+        <div class="registro-card">
+          <div class="registro-card-header">
+            <div class="registro-icon">
+              <i class="fas fa-user-plus"></i>
+            </div>
 
-        <div class="mb-3">
-          <label for="nombresRegistro" class="form-label">Nombres</label>
-          <input type="text" class="form-control" id="nombresRegistro" formControlName="nombres" placeholder="Ingresa tus nombres">
-          @if (f.nombres.touched && f.nombres.errors?.['required']) {
-            <div class="text-danger form-text">¡Debe ingresar sus nombres!</div>
-          }
-        </div>
-
-        <div class="mb-3">
-          <label for="apellidosRegistro" class="form-label">Apellidos</label>
-          <input type="text" class="form-control" id="apellidosRegistro" formControlName="apellidos" placeholder="Ingresa tus apellidos">
-          @if (f.apellidos.touched && f.apellidos.errors?.['required']) {
-            <div class="text-danger form-text">¡Debe ingresar sus apellidos!</div>
-          }
-        </div>
-
-        <div class="mb-3">
-          <label for="correoRegistro" class="form-label">Correo electrónico</label>
-          <input type="email" class="form-control" id="correoRegistro" formControlName="correo" placeholder="nombre@correo.com">
-          @if (f.correo.touched && f.correo.errors?.['required']) {
-            <div class="text-danger form-text">¡Debe ingresar su correo electrónico!</div>
-          }
-          @if (f.correo.touched && f.correo.errors?.['email']) {
-            <div class="text-danger form-text">¡Ingrese un correo electrónico válido!</div>
-          }
-        </div>
-
-        <div class="mb-3">
-          <label for="telefonoRegistro" class="form-label">Teléfono</label>
-          <input type="tel" class="form-control" id="telefonoRegistro" formControlName="telefono" placeholder="Ej: 3001234567">
-          @if (f.telefono.touched && f.telefono.errors?.['required']) {
-            <div class="text-danger form-text">¡Debe ingresar su teléfono!</div>
-          }
-          @if (f.telefono.touched && f.telefono.errors?.['pattern']) {
-            <div class="text-danger form-text">¡El teléfono debe contener solo números!</div>
-          }
-        </div>
-
-        <div class="mb-3">
-          <label for="passwordRegistro" class="form-label">Contraseña</label>
-          <input type="password" class="form-control" id="passwordRegistro" formControlName="password" placeholder="Mínimo 6 caracteres">
-          @if (f.password.touched && f.password.invalid) {
-            <div class="text-danger form-text">¡La contraseña debe tener entre 6 y 30 caracteres!</div>
-          }
-        </div>
-
-        <div class="mb-3">
-          <label class="form-label d-block">Tipo de documento</label>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" formControlName="tipoDocumento" id="tipoDocumentoCC" value="CC">
-            <label class="form-check-label" for="tipoDocumentoCC">Cédula de ciudadanía</label>
+            <div>
+              <h5>Crear una cuenta</h5>
+              <span>Completa tus datos personales</span>
+            </div>
           </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" formControlName="tipoDocumento" id="tipoDocumentoTI" value="TI">
-            <label class="form-check-label" for="tipoDocumentoTI">Tarjeta de identidad</label>
-          </div>
-          @if (f.tipoDocumento.touched && f.tipoDocumento.errors?.['required']) {
-            <div class="text-danger form-text">¡Debe seleccionar un tipo de documento!</div>
-          }
-        </div>
 
-        <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="terminosRegistro" formControlName="terminos">
-          <label class="form-check-label" for="terminosRegistro">Acepto los términos y condiciones</label>
-          @if (f.terminos.touched && f.terminos.errors?.['required']) {
-            <div class="text-danger form-text">¡Debe aceptar los términos y condiciones!</div>
-          }
-        </div>
+          <form [formGroup]="formulario" (ngSubmit)="registrar()" novalidate class="registro-form">
+            <div class="row g-3">
+              <!-- NOMBRES -->
+              <div class="col-12 col-md-6">
+                <label for="nombresRegistro" class="form-label"> Nombres </label>
 
-        <div class="d-flex justify-content-start">
-          <button type="submit" class="btn btn-primary">Registrar</button>
+                <div class="input-wrapper">
+                  <i class="fas fa-user"></i>
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nombresRegistro"
+                    formControlName="nombres"
+                    placeholder="Ingresa tus nombres"
+                  />
+                </div>
+
+                @if (f.nombres.touched && f.nombres.errors?.['required']) {
+                  <div class="text-danger form-text">¡Debe ingresar sus nombres!</div>
+                }
+              </div>
+
+              <!-- APELLIDOS -->
+              <div class="col-12 col-md-6">
+                <label for="apellidosRegistro" class="form-label"> Apellidos </label>
+
+                <div class="input-wrapper">
+                  <i class="fas fa-user"></i>
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="apellidosRegistro"
+                    formControlName="apellidos"
+                    placeholder="Ingresa tus apellidos"
+                  />
+                </div>
+
+                @if (f.apellidos.touched && f.apellidos.errors?.['required']) {
+                  <div class="text-danger form-text">¡Debe ingresar sus apellidos!</div>
+                }
+              </div>
+
+              <!-- CORREO -->
+              <div class="col-12">
+                <label for="correoRegistro" class="form-label"> Correo electrónico </label>
+
+                <div class="input-wrapper">
+                  <i class="fas fa-envelope"></i>
+
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="correoRegistro"
+                    formControlName="correo"
+                    placeholder="nombre@correo.com"
+                  />
+                </div>
+
+                @if (f.correo.touched && f.correo.errors?.['required']) {
+                  <div class="text-danger form-text">¡Debe ingresar su correo electrónico!</div>
+                }
+
+                @if (f.correo.touched && f.correo.errors?.['email']) {
+                  <div class="text-danger form-text">¡Ingrese un correo electrónico válido!</div>
+                }
+              </div>
+
+              <!-- TELÉFONO -->
+              <div class="col-12 col-md-6">
+                <label for="telefonoRegistro" class="form-label"> Teléfono </label>
+
+                <div class="input-wrapper">
+                  <i class="fas fa-phone"></i>
+
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="telefonoRegistro"
+                    formControlName="telefono"
+                    placeholder="Ej: 3001234567"
+                  />
+                </div>
+
+                @if (f.telefono.touched && f.telefono.errors?.['required']) {
+                  <div class="text-danger form-text">¡Debe ingresar su teléfono!</div>
+                }
+
+                @if (f.telefono.touched && f.telefono.errors?.['pattern']) {
+                  <div class="text-danger form-text">¡El teléfono debe contener solo números!</div>
+                }
+              </div>
+
+              <!-- CONTRASEÑA -->
+              <div class="col-12 col-md-6">
+                <label for="passwordRegistro" class="form-label"> Contraseña </label>
+
+                <div class="input-wrapper">
+                  <i class="fas fa-lock"></i>
+
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="passwordRegistro"
+                    formControlName="password"
+                    placeholder="Mínimo 6 caracteres"
+                  />
+                </div>
+
+                @if (f.password.touched && f.password.invalid) {
+                  <div class="text-danger form-text">
+                    ¡La contraseña debe tener entre 6 y 30 caracteres!
+                  </div>
+                }
+              </div>
+
+              <!-- TIPO DOCUMENTO -->
+              <div class="col-12">
+                <label class="form-label"> Tipo de documento </label>
+
+                <div class="document-options">
+                  <label class="document-option">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      formControlName="tipoDocumento"
+                      id="tipoDocumentoCC"
+                      value="CC"
+                    />
+
+                    <span class="document-icon">
+                      <i class="fas fa-id-card"></i>
+                    </span>
+
+                    <span>
+                      <strong>Cédula de ciudadanía</strong>
+                      <small>CC</small>
+                    </span>
+                  </label>
+
+                  <label class="document-option">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      formControlName="tipoDocumento"
+                      id="tipoDocumentoTI"
+                      value="TI"
+                    />
+
+                    <span class="document-icon">
+                      <i class="fas fa-id-card"></i>
+                    </span>
+
+                    <span>
+                      <strong>Tarjeta de identidad</strong>
+                      <small>TI</small>
+                    </span>
+                  </label>
+                </div>
+
+                @if (f.tipoDocumento.touched && f.tipoDocumento.errors?.['required']) {
+                  <div class="text-danger form-text">¡Debe seleccionar un tipo de documento!</div>
+                }
+              </div>
+
+              <!-- NÚMERO DE DOCUMENTO -->
+              <div class="col-12">
+                <label for="numeroDocumentoRegistro" class="form-label">
+                  Número de documento
+                </label>
+
+                <div class="input-wrapper">
+                  <i class="fas fa-id-card"></i>
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="numeroDocumentoRegistro"
+                    formControlName="numeroDocumento"
+                    placeholder="Ingresa tu número de documento"
+                  />
+                </div>
+
+                @if (f.numeroDocumento.touched && f.numeroDocumento.errors?.['required']) {
+                  <div class="text-danger form-text">¡Debe ingresar su número de documento!</div>
+                }
+
+                @if (f.numeroDocumento.touched && f.numeroDocumento.errors?.['pattern']) {
+                  <div class="text-danger form-text">
+                    ¡El número de documento debe contener solo números!
+                  </div>
+                }
+              </div>
+
+              <!-- TÉRMINOS -->
+              <div class="col-12">
+                <div class="terms-box">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="terminosRegistro"
+                    formControlName="terminos"
+                  />
+
+                  <label class="form-check-label" for="terminosRegistro">
+                    Acepto los términos y condiciones
+                  </label>
+                </div>
+
+                @if (f.terminos.touched && f.terminos.errors?.['required']) {
+                  <div class="text-danger form-text">¡Debe aceptar los términos y condiciones!</div>
+                }
+              </div>
+
+              <!-- BOTÓN -->
+              <div class="col-12">
+                <button type="submit" class="btn-registrar">
+                  <i class="fas fa-user-plus"></i>
+
+                  Crear mi cuenta
+
+                  <i class="fas fa-arrow-right btn-arrow"></i>
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
-      </form>
+      </div>
     </div>
   </div>
 </section>

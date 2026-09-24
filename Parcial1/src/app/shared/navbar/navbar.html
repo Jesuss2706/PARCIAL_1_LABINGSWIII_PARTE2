@@ -1,23 +1,54 @@
-  <!-- Ocupa todo el ancho y se expande a partir de md; en pantallas menores se colapsa -->
-  <nav class="navbar navbar-expand-md navbar-dark sticky-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Piedra Azul</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#seccion1">Promociones</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#seccion2">Médicos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#seccion3">Regístrate</a>
-          </li>
-        </ul>
-      </div>
+<nav class="navbar navbar-expand-md navbar-dark sticky-top clinic-navbar">
+  <div class="container">
+
+    <!-- Logo -->
+    <a class="navbar-brand" href="#">
+      <i class="fas fa-clinic-medical"></i>
+      <span>Piedra Azul</span>
+    </a>
+
+    <!-- Botón móvil -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Abrir menú">
+
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menú -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item">
+          <a class="nav-link active" href="#seccion1">
+            <i class="fas fa-tags"></i>
+            Promociones
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#seccion2">
+            <i class="fas fa-user-md"></i>
+            Médicos
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link register-link" href="#seccion3">
+            <i class="fas fa-user-plus"></i>
+            Regístrate
+          </a>
+        </li>
+
+      </ul>
+
     </div>
-  </nav>
+
+  </div>
+</nav>
