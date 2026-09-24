@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
+import { Medicos } from '../medicos/medicos';
+import { Registro } from '../registro/registro';
 import { Carrusel } from '../carrusel/carrusel';
 
 @Component({
-  imports: [Carrusel],
   selector: 'app-home',
-  styleUrl: './home.css',
+  imports: [Medicos, Registro, Carrusel],
   templateUrl: './home.html',
+  styleUrl: './home.css'
 })
-export class Home {}
+export class Home {
+
+}

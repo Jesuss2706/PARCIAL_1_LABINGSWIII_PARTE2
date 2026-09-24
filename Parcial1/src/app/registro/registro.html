@@ -1,0 +1,87 @@
+<section id="seccion3" class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+      <h2 class="text-center mb-2">Regístrate</h2>
+      <p class="text-center lead mb-4">
+        Crea tu cuenta para agendar citas. Te enviaremos un código de confirmación a tu
+        <strong>correo electrónico</strong>, que será el dato usado para confirmar tu registro.
+      </p>
+
+      <form [formGroup]="formulario" (ngSubmit)="registrar()" novalidate>
+
+        <div class="mb-3">
+          <label for="nombresRegistro" class="form-label">Nombres</label>
+          <input type="text" class="form-control" id="nombresRegistro" formControlName="nombres" placeholder="Ingresa tus nombres">
+          @if (f.nombres.touched && f.nombres.errors?.['required']) {
+            <div class="text-danger form-text">¡Debe ingresar sus nombres!</div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label for="apellidosRegistro" class="form-label">Apellidos</label>
+          <input type="text" class="form-control" id="apellidosRegistro" formControlName="apellidos" placeholder="Ingresa tus apellidos">
+          @if (f.apellidos.touched && f.apellidos.errors?.['required']) {
+            <div class="text-danger form-text">¡Debe ingresar sus apellidos!</div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label for="correoRegistro" class="form-label">Correo electrónico</label>
+          <input type="email" class="form-control" id="correoRegistro" formControlName="correo" placeholder="nombre@correo.com">
+          @if (f.correo.touched && f.correo.errors?.['required']) {
+            <div class="text-danger form-text">¡Debe ingresar su correo electrónico!</div>
+          }
+          @if (f.correo.touched && f.correo.errors?.['email']) {
+            <div class="text-danger form-text">¡Ingrese un correo electrónico válido!</div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label for="telefonoRegistro" class="form-label">Teléfono</label>
+          <input type="tel" class="form-control" id="telefonoRegistro" formControlName="telefono" placeholder="Ej: 3001234567">
+          @if (f.telefono.touched && f.telefono.errors?.['required']) {
+            <div class="text-danger form-text">¡Debe ingresar su teléfono!</div>
+          }
+          @if (f.telefono.touched && f.telefono.errors?.['pattern']) {
+            <div class="text-danger form-text">¡El teléfono debe contener solo números!</div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label for="passwordRegistro" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" id="passwordRegistro" formControlName="password" placeholder="Mínimo 6 caracteres">
+          @if (f.password.touched && f.password.invalid) {
+            <div class="text-danger form-text">¡La contraseña debe tener entre 6 y 30 caracteres!</div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label d-block">Tipo de documento</label>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="tipoDocumento" id="tipoDocumentoCC" value="CC">
+            <label class="form-check-label" for="tipoDocumentoCC">Cédula de ciudadanía</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="tipoDocumento" id="tipoDocumentoTI" value="TI">
+            <label class="form-check-label" for="tipoDocumentoTI">Tarjeta de identidad</label>
+          </div>
+          @if (f.tipoDocumento.touched && f.tipoDocumento.errors?.['required']) {
+            <div class="text-danger form-text">¡Debe seleccionar un tipo de documento!</div>
+          }
+        </div>
+
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="terminosRegistro" formControlName="terminos">
+          <label class="form-check-label" for="terminosRegistro">Acepto los términos y condiciones</label>
+          @if (f.terminos.touched && f.terminos.errors?.['required']) {
+            <div class="text-danger form-text">¡Debe aceptar los términos y condiciones!</div>
+          }
+        </div>
+
+        <div class="d-flex justify-content-start">
+          <button type="submit" class="btn btn-primary">Registrar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

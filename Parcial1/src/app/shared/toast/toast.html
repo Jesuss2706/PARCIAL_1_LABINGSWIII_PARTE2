@@ -1,0 +1,5 @@
+<div id="notificaciones">
+  @for (n of notificacionService.notificaciones(); track n.id) {
+    <div class="notificacion notificacion-{{ n.tipo }}">{{ n.mensaje }}</div>
+  }
+</div>

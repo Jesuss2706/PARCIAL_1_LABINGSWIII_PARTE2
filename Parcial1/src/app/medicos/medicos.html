@@ -1,0 +1,74 @@
+<section id="seccion2" class="container my-5">
+  <h2 class="text-center mb-4">Nuestros médicos</h2>
+
+  <div class="row">
+    <aside class="col-12 col-sm-2 col-md-4 mb-4">
+      <div class="sidebar-especialidades p-3 border rounded">
+        <h5>Especialidades</h5>
+
+```
+    <ul class="list-unstyled">
+      @for (clave of claveEspecialidades; track clave) {
+        <li>
+          <a
+            href="#"
+            class="especialidad-link"
+            [class.active]="especialidadSeleccionada() === clave"
+            (click)="seleccionarEspecialidad(clave); $event.preventDefault()"
+          >
+            {{ especialidades[clave].nombre }}
+          </a>
+        </li>
+      }
+    </ul>
+
+    <p class="small text-muted mt-3">
+      <strong>
+        {{ especialidades[especialidadSeleccionada()].nombre }}:
+      </strong>
+
+      {{ especialidades[especialidadSeleccionada()].descripcion }}
+    </p>
+  </div>
+</aside>
+
+<div class="col-12 col-sm-10 col-md-8">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
+    @for (medico of medicos; track medico.nombres + medico.apellidos) {
+      <div class="col">
+        <div class="card h-100 border">
+          <img
+            [src]="medico.imagen"
+            class="card-img-top img-fluid"
+            [alt]="'Dr(a). ' + medico.nombres"
+          />
+
+          <div class="card-body d-flex flex-column">
+            <h6 class="card-title">
+              {{ medico.nombres }} {{ medico.apellidos }}
+            </h6>
+
+            <p class="card-text small mb-1">
+              {{ medico.especialidad }}
+            </p>
+
+            <p class="card-text small text-muted flex-grow-1">
+              {{ medico.frase }}
+            </p>
+
+            <button
+              class="btn btn-primary btn-sm mt-2"
+              (click)="agendarCita(medico)"
+            >
+              Agendar Cita
+            </button>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>
+```
+
+  </div>
+</section>

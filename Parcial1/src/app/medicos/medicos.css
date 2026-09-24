@@ -1,0 +1,26 @@
+.sidebar-especialidades {
+  background-color: #f4f7fb;
+}
+
+.especialidad-link {
+  display: block;
+  padding: 6px 0;
+  color: #47709b;
+  text-decoration: none;
+  border-bottom: 1px solid #dee2e6;
+  cursor: pointer;
+}
+
+.especialidad-link:hover {
+  color: #6da1d9;
+}
+
+.especialidad-link.active {
+  font-weight: bold;
+  color: #24466b;
+}
+
+.card-img-top {
+  height: 160px;
+  object-fit: cover;
+}
